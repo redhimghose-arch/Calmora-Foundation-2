@@ -132,9 +132,9 @@ const WhatWeDo = () => {
   return (
     <main className="pt-16">
       {/* Hero */}
-      <section className="relative h-[50vh] md:h-[70vh] min-h-[400px] flex items-center overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={skillTraining} alt="Our work" className="w-full h-full object-cover" />
+          <img src={skillTraining} alt="Our work" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
