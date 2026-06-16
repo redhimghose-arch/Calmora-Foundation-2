@@ -132,31 +132,36 @@ const WhatWeDo = () => {
   return (
     <main className="pt-16">
       {/* Hero */}
-      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={skillTraining} alt="Our work" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
-              Our Work
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-              About Calmora Foundation
-            </h1>
-            <p className="text-primary-foreground/70 text-lg max-w-4xl">
-              Calmora Foundation is a New Delhi-based non-profit organization
-              focused on structured psycho-social stabilization and mental
-              health system integration in India. Our work bridges hospital-based 
-              psychological support and community-level mental hygiene outreach to 
-              reduce long-term psychosocial risk.
-            </p>
-          </motion.div>
+      <section className="relative overflow-hidden">
+        <img
+          src={skillTraining}
+          alt="Our work"
+          className="w-full h-auto block"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-foreground/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="container mx-auto px-4 pb-12 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
+                Our Work
+              </p>
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                About Calmora Foundation
+              </h1>
+              <p className="text-primary-foreground/70 text-lg max-w-4xl">
+                Calmora Foundation is a New Delhi-based non-profit organization
+                focused on structured psycho-social stabilization and mental
+                health system integration in India. Our work bridges hospital-based
+                psychological support and community-level mental hygiene outreach to
+                reduce long-term psychosocial risk.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
