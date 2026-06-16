@@ -99,12 +99,12 @@ const FoundersSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-soft transition-all"
           >
-            <div className="relative h-80">
+            <div className="relative h-[520px]">
               <div className="absolute -inset-2 bg-primary/10 blur-xl rounded-3xl" />
               <img
                 src={founders.sadaf.img}
                 alt={founders.sadaf.imgAlt}
-                className="relative w-full h-full object-cover"
+                className="relative w-full h-full object-cover object-top"
               />
             </div>
             <div className="p-8">
@@ -132,12 +132,12 @@ const FoundersSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-soft transition-all"
           >
-            <div className="relative h-80">
+            <div className="relative h-[520px]">
               <div className="absolute -inset-2 bg-accent/10 blur-xl rounded-3xl" />
               <img
                 src={founders.seema.img}
                 alt={founders.seema.imgAlt}
-                className="relative w-full h-full object-cover"
+                className="relative w-full h-full object-cover object-top"
               />
             </div>
             <div className="p-8">
