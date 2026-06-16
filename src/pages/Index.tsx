@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, Users, BookOpen, Shield, ArrowRight, ChevronRight } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useMetaPixel, MetaPixelNoscript } from "@/hooks/useMetaPixel";
 import groupPhoto from "@/assets/group-photo.jpeg";
 import classroom from "@/assets/change1.jpeg";
@@ -66,11 +66,8 @@ const founders = {
   },
 };
 
-/* ── Founders tab sub-component (hooks at top level) ── */
+/* ── Founders section - Both founders displayed side by side ── */
 const FoundersSection = () => {
-  const [active, setActive] = useState<"sadaf" | "seema">("sadaf");
-  const f = founders[active];
-
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
@@ -92,67 +89,74 @@ const FoundersSection = () => {
           </h2>
         </motion.div>
 
-        {/* Tab switcher */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-background border border-border rounded-xl p-1 gap-1">
-            {(["sadaf", "seema"] as const).map((key) => (
-              <button
-                key={key}
-                onClick={() => setActive(key)}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                  active === key
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-                aria-pressed={active === key}
-              >
-                {founders[key].name.split(" ").slice(-1)[0]}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Content */}
-        <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
-        >
-          {/* Image */}
-          <div className="order-2 lg:order-1">
-            <div className="relative max-w-md mx-auto">
-              <div className="absolute -inset-3 bg-primary/10 blur-2xl rounded-3xl" />
+        {/* Both Founders Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Sadaf Saeed Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-soft transition-all"
+          >
+            <div className="relative h-80">
+              <div className="absolute -inset-2 bg-primary/10 blur-xl rounded-3xl" />
               <img
-                src={f.img}
-                alt={f.imgAlt}
-                className="relative rounded-2xl shadow-soft w-full object-cover h-[460px]"
+                src={founders.sadaf.img}
+                alt={founders.sadaf.imgAlt}
+                className="relative w-full h-full object-cover"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-primary text-primary-foreground rounded-xl px-5 py-3 shadow-lg">
-                <p className="font-display font-bold text-base">{f.name}</p>
-                <p className="text-xs text-primary-foreground/80 mt-0.5">{f.role}</p>
-              </div>
             </div>
-          </div>
+            <div className="p-8">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-1">
+                {founders.sadaf.name}
+              </h3>
+              <p className="text-primary text-sm font-semibold mb-4">{founders.sadaf.role}</p>
+              <p className="text-muted-foreground leading-relaxed mb-6">{founders.sadaf.bio}</p>
+              <ul className="space-y-3">
+                {founders.sadaf.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
 
-          {/* Text */}
-          <div className="order-1 lg:order-2">
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-              {f.name}
-            </h3>
-            <p className="text-primary text-sm font-semibold mb-5">{f.role}</p>
-            <p className="text-muted-foreground leading-relaxed mb-6">{f.bio}</p>
-            <ul className="space-y-3">
-              {f.points.map((pt) => (
-                <li key={pt} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  {pt}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
+          {/* Seema Raturi Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-soft transition-all"
+          >
+            <div className="relative h-80">
+              <div className="absolute -inset-2 bg-accent/10 blur-xl rounded-3xl" />
+              <img
+                src={founders.seema.img}
+                alt={founders.seema.imgAlt}
+                className="relative w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-1">
+                {founders.seema.name}
+              </h3>
+              <p className="text-primary text-sm font-semibold mb-4">{founders.seema.role}</p>
+              <p className="text-muted-foreground leading-relaxed mb-6">{founders.seema.bio}</p>
+              <ul className="space-y-3">
+                {founders.seema.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
