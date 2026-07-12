@@ -181,16 +181,25 @@ const Index = () => {
           @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(60px) translateX(-35px); } 50% { transform: translateY(30px) translateX(40px); } 75% { transform: translateY(-40px) translateX(-20px); } }
           @keyframes float3 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-35px) translateX(50px); } 50% { transform: translateY(50px) translateX(-30px); } 75% { transform: translateY(-25px) translateX(35px); } }
           @keyframes float4 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(45px) translateX(25px); } 50% { transform: translateY(-50px) translateX(-40px); } 75% { transform: translateY(35px) translateX(-25px); } }
+          @keyframes float5 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-30px) translateX(20px); } 50% { transform: translateY(25px) translateX(-20px); } 75% { transform: translateY(-15px) translateX(25px); } }
+          @keyframes float6 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(35px) translateX(-25px); } 50% { transform: translateY(-20px) translateX(30px); } 75% { transform: translateY(20px) translateX(-15px); } }
+          @keyframes float7 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-25px) translateX(35px); } 50% { transform: translateY(30px) translateX(-35px); } 75% { transform: translateY(-30px) translateX(20px); } }
           .float-1 { animation: float1 4s ease-in-out infinite; }
           .float-2 { animation: float2 5s ease-in-out infinite 0.3s; }
           .float-3 { animation: float3 4.5s ease-in-out infinite 0.8s; }
           .float-4 { animation: float4 5.5s ease-in-out infinite 1.2s; }
+          .float-5 { animation: float5 3.5s ease-in-out infinite 0.5s; }
+          .float-6 { animation: float6 4.2s ease-in-out infinite 0.9s; }
+          .float-7 { animation: float7 4.8s ease-in-out infinite 1.4s; }
         `}</style>
 
         <div className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/50 blur-2xl float-1 pointer-events-none z-20" />
         <div className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/40 blur-3xl float-2 pointer-events-none z-20" />
         <div className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/40 blur-2xl float-3 pointer-events-none z-20" />
         <div className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/30 blur-3xl float-4 pointer-events-none z-20" />
+        <div className="absolute top-2/3 left-1/3 w-12 h-12 rounded-full bg-primary/45 blur-lg float-5 pointer-events-none z-20" />
+        <div className="absolute top-1/4 right-1/3 w-16 h-16 rounded-full bg-accent/35 blur-xl float-6 pointer-events-none z-20" />
+        <div className="absolute bottom-1/3 right-1/4 w-10 h-10 rounded-full bg-primary/35 blur-lg float-7 pointer-events-none z-20" />
 
         <motion.img
           src="/Untitled_design.png"
