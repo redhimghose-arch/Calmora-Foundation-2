@@ -181,10 +181,10 @@ const Index = () => {
           @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(50px) translateX(-20px); } }
           @keyframes float3 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(35px) translateX(25px); } }
           @keyframes float4 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-45px) translateX(-18px); } }
-          .float-1 { animation: float1 6s ease-in-out infinite; }
-          .float-2 { animation: float2 8s ease-in-out infinite 0.5s; }
-          .float-3 { animation: float3 7s ease-in-out infinite 1s; }
-          .float-4 { animation: float4 9s ease-in-out infinite 1.5s; }
+          .float-1 { animation: float1 5s ease-in-out infinite; }
+          .float-2 { animation: float2 6.5s ease-in-out infinite 0.5s; }
+          .float-3 { animation: float3 5.5s ease-in-out infinite 1s; }
+          .float-4 { animation: float4 7s ease-in-out infinite 1.5s; }
         `}</style>
 
         <div className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/50 blur-2xl float-1 pointer-events-none z-20" />
@@ -196,7 +196,7 @@ const Index = () => {
           src="/Untitled_design.png"
           alt="Calmora Foundation"
           className="relative w-full h-auto object-cover"
-          style={{ objectPosition: "center 40%" }}
+          style={{ objectPosition: "center 35%" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
