@@ -177,14 +177,14 @@ const Index = () => {
       {/* ── Intro Banner ── */}
       <section className="relative w-full overflow-hidden">
         <style>{`
-          @keyframes float1 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-40px) translateX(15px); } }
-          @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(50px) translateX(-20px); } }
-          @keyframes float3 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(35px) translateX(25px); } }
-          @keyframes float4 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-45px) translateX(-18px); } }
-          .float-1 { animation: float1 5s ease-in-out infinite; }
-          .float-2 { animation: float2 6.5s ease-in-out infinite 0.5s; }
-          .float-3 { animation: float3 5.5s ease-in-out infinite 1s; }
-          .float-4 { animation: float4 7s ease-in-out infinite 1.5s; }
+          @keyframes float1 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-50px) translateX(30px); } 50% { transform: translateY(-20px) translateX(-25px); } 75% { transform: translateY(40px) translateX(20px); } }
+          @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(60px) translateX(-35px); } 50% { transform: translateY(30px) translateX(40px); } 75% { transform: translateY(-40px) translateX(-20px); } }
+          @keyframes float3 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-35px) translateX(50px); } 50% { transform: translateY(50px) translateX(-30px); } 75% { transform: translateY(-25px) translateX(35px); } }
+          @keyframes float4 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(45px) translateX(25px); } 50% { transform: translateY(-50px) translateX(-40px); } 75% { transform: translateY(35px) translateX(-25px); } }
+          .float-1 { animation: float1 4s ease-in-out infinite; }
+          .float-2 { animation: float2 5s ease-in-out infinite 0.3s; }
+          .float-3 { animation: float3 4.5s ease-in-out infinite 0.8s; }
+          .float-4 { animation: float4 5.5s ease-in-out infinite 1.2s; }
         `}</style>
 
         <div className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/50 blur-2xl float-1 pointer-events-none z-20" />
@@ -196,7 +196,7 @@ const Index = () => {
           src="/Untitled_design.png"
           alt="Calmora Foundation"
           className="relative w-full h-auto object-cover"
-          style={{ objectPosition: "center 35%" }}
+          style={{ objectPosition: "center 20%" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
