@@ -175,7 +175,7 @@ const Index = () => {
       <MetaPixelNoscript />
 
       {/* ── Intro Banner ── */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full overflow-hidden" style={{ transform: "scale(0.98)" }}>
         <style>{`
           @keyframes float1 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(-60px) translateX(50px); } 50% { transform: translateY(-80px) translateX(60px); } 75% { transform: translateY(-40px) translateX(45px); } }
           @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 25% { transform: translateY(70px) translateX(-60px); } 50% { transform: translateY(85px) translateX(-80px); } 75% { transform: translateY(50px) translateX(-55px); } }
@@ -232,7 +232,7 @@ const Index = () => {
           src="/Untitled_design.png"
           alt="Calmora Foundation"
           className="relative w-full h-auto object-cover"
-          style={{ objectPosition: "center 20%" }}
+          style={{ objectPosition: "center 10%" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
