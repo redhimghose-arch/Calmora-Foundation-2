@@ -232,7 +232,7 @@ const Index = () => {
           src="/Untitled_design.png"
           alt="Calmora Foundation"
           className="relative w-full h-auto object-cover"
-          style={{ objectPosition: "center -5%" }}
+          style={{ objectPosition: "center -15%" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
