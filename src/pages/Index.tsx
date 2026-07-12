@@ -1,7 +1,7 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, Users, BookOpen, Shield, ArrowRight, ChevronRight } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useMetaPixel, MetaPixelNoscript } from "@/hooks/useMetaPixel";
 import groupPhoto from "@/assets/group-photo.jpeg";
 import classroom from "@/assets/change1.jpeg";
@@ -170,8 +170,51 @@ const Index = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowSplash(false), 2200);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <main className="pt-16">
+      <AnimatePresence>
+        {showSplash && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <motion.img
+              src="/Untitled_design.png"
+              alt="Calmora"
+              className="w-40 h-40 sm:w-52 sm:h-52 object-contain"
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            />
+            <motion.h1
+              className="mt-6 text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
+              initial={{ y: 12, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.35, duration: 0.6, ease: "easeOut" }}
+            >
+              Calmora
+            </motion.h1>
+            <motion.p
+              className="mt-2 text-sm sm:text-base text-muted-foreground"
+              initial={{ y: 8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.55, duration: 0.6, ease: "easeOut" }}
+            >
+              Mindful therapy for every mind
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <MetaPixelNoscript />
 
       {/* ── Hero ── */}
