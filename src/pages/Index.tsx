@@ -175,11 +175,64 @@ const Index = () => {
       <MetaPixelNoscript />
 
       {/* ── Intro Banner ── */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full overflow-hidden bg-background">
+        {/* Floating graphics */}
+        <motion.div
+          className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/20 blur-xl"
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 10, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/15 blur-2xl"
+          animate={{
+            y: [0, 40, 0],
+            x: [0, -15, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/15 blur-xl"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, 20, 0],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/10 blur-2xl"
+          animate={{
+            y: [0, -35, 0],
+            x: [0, -12, 0],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5,
+          }}
+        />
+
         <motion.img
           src="/Untitled_design.png"
           alt="Calmora Foundation"
-          className="w-full h-auto object-cover"
+          className="relative z-10 w-full h-auto object-cover"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
