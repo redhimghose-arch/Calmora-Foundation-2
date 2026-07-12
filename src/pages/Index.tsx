@@ -175,31 +175,15 @@ const Index = () => {
       <MetaPixelNoscript />
 
       {/* ── Intro Banner ── */}
-      <section className="relative w-full overflow-hidden bg-background">
-        <div className="relative mx-auto max-w-5xl px-6 py-10 md:py-14 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          <motion.img
-            src="/Untitled_design.png"
-            alt="Calmora Foundation"
-            className="w-28 h-28 md:w-36 md:h-36 object-contain shrink-0"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          />
-          <motion.div
-            className="text-center md:text-left"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-          >
-            <h2 className="font-display text-xl md:text-2xl font-bold text-foreground leading-snug">
-              Welcome to Calmora Foundation
-            </h2>
-            <p className="mt-2 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
-              A structured psycho-social risk stabilization organization committed to mindful therapy for every mind.
-            </p>
-          </motion.div>
-        </div>
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
+      <section className="relative w-full overflow-hidden">
+        <motion.img
+          src="/Untitled_design.png"
+          alt="Calmora Foundation"
+          className="w-full h-auto object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
       </section>
 
       {/* ── Hero ── */}
