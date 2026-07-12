@@ -175,10 +175,10 @@ const Index = () => {
       <MetaPixelNoscript />
 
       {/* ── Intro Banner ── */}
-      <section className="relative w-full overflow-hidden bg-background">
+      <section className="relative w-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
         {/* Floating graphics */}
         <motion.div
-          className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/20 blur-xl"
+          className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/40 blur-2xl"
           animate={{
             y: [0, -30, 0],
             x: [0, 10, 0],
@@ -190,7 +190,7 @@ const Index = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/15 blur-2xl"
+          className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/30 blur-3xl"
           animate={{
             y: [0, 40, 0],
             x: [0, -15, 0],
@@ -203,7 +203,7 @@ const Index = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/15 blur-xl"
+          className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/35 blur-2xl"
           animate={{
             y: [0, 25, 0],
             x: [0, 20, 0],
@@ -216,7 +216,7 @@ const Index = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/10 blur-2xl"
+          className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/25 blur-3xl"
           animate={{
             y: [0, -35, 0],
             x: [0, -12, 0],
