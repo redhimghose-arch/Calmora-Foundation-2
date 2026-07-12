@@ -175,68 +175,34 @@ const Index = () => {
       <MetaPixelNoscript />
 
       {/* ── Intro Banner ── */}
-      <section className="relative w-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
-        {/* Floating graphics */}
-        <motion.div
-          className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/40 blur-2xl"
-          animate={{
-            y: [0, -30, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/30 blur-3xl"
-          animate={{
-            y: [0, 40, 0],
-            x: [0, -15, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/35 blur-2xl"
-          animate={{
-            y: [0, 25, 0],
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/25 blur-3xl"
-          animate={{
-            y: [0, -35, 0],
-            x: [0, -12, 0],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.5,
-          }}
-        />
+      <section className="relative w-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 py-12">
+        <div className="relative h-80 md:h-96 lg:h-[500px] flex items-center justify-center">
+          {/* Floating graphics with CSS animations */}
+          <style>{`
+            @keyframes float1 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-30px) translateX(10px); } }
+            @keyframes float2 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(40px) translateX(-15px); } }
+            @keyframes float3 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(25px) translateX(20px); } }
+            @keyframes float4 { 0%, 100% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(-35px) translateX(-12px); } }
+            .float-1 { animation: float1 6s ease-in-out infinite; }
+            .float-2 { animation: float2 8s ease-in-out infinite 0.5s; }
+            .float-3 { animation: float3 7s ease-in-out infinite 1s; }
+            .float-4 { animation: float4 9s ease-in-out infinite 1.5s; }
+          `}</style>
 
-        <motion.img
-          src="/Untitled_design.png"
-          alt="Calmora Foundation"
-          className="relative z-10 w-full h-auto object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        />
+          <div className="absolute top-1/4 left-8 w-20 h-20 rounded-full bg-primary/60 blur-2xl float-1 pointer-events-none" />
+          <div className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-accent/50 blur-3xl float-2 pointer-events-none" />
+          <div className="absolute bottom-1/4 left-1/4 w-24 h-24 rounded-full bg-primary/50 blur-2xl float-3 pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 w-28 h-28 rounded-full bg-accent/40 blur-3xl float-4 pointer-events-none" />
+
+          <motion.img
+            src="/Untitled_design.png"
+            alt="Calmora Foundation"
+            className="relative z-10 w-full h-full object-cover rounded-lg shadow-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+        </div>
       </section>
 
       {/* ── Hero ── */}
